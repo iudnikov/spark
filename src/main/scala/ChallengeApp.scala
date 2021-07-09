@@ -145,7 +145,8 @@ object ChallengeApp {
 
       currenciesRaw
         .withColumn("validUntil", lag(col("date"), -1).over(window))
-        .na.fill(formatter.format(Instant.now()), Array("date"))
+        .na.fill(formatter.format(Instant.now()), Array("validUntil"))
+
     }
 
     val joined = {
