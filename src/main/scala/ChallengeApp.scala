@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.functions._
 
-object LeoVegasChallenge {
+object ChallengeApp {
 
   def main(args: Array[String]) {
 
