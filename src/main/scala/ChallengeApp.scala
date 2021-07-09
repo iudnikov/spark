@@ -206,15 +206,15 @@ object ChallengeApp {
         col("country"),
         col("gameId"))
       .agg(
-        sum(col("cashTurnover")),
-        sum(col("bonusTurnover")),
-        sum(col("cashWinnings")),
-        sum(col("bonusWinnings")),
-        sum(col("turnover")),
-        sum(col("winnings")),
-        sum(col("cashResult")),
-        sum(col("bonusResult")),
-        sum(col("grossResult")))
+        round(sum(col("cashTurnover")), 2).as("Cash turnover"),
+        round(sum(col("bonusTurnover")), 2).as("Bonus turnover"),
+        round(sum(col("cashWinnings")), 2).as("Cash winnings"),
+        round(sum(col("bonusWinnings")), 2).as("Bonus winnings"),
+        round(sum(col("turnover")), 2).as("Turnover"),
+        round(sum(col("winnings")), 2).as("Winnings"),
+        round(sum(col("cashResult")), 2).as("Cash result"),
+        round(sum(col("bonusResult")), 2).as("Bonus result"),
+        round(sum(col("grossResult")), 2).as("Gross result"))
       .sort(
         desc("date"),
         desc("playerId"),
